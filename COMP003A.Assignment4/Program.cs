@@ -31,7 +31,29 @@
                         Console.WriteLine("Routine is already complete. No more steps can be done");
                     }
 
+                    else
+                    {
+                        currentStep++;
 
+                        if (currentStep == restrictedStep)
+                        {
+                            Console.WriteLine($"Step {currentStep} is restricted and was skipped");
+                            continue;
+                        }
+
+                        if (currentStep >= safetyLimit)
+                        {
+                            Console.WriteLine("Safety limit reached. Routine stopped");
+                            break;
+                        }
+
+                        Console.WriteLine($"Routine step {currentStep} completed");
+
+                        if (currentStep >= maxSteps)
+                        {
+                            Console.WriteLine("Maximum steps reached. Routine complete");
+                        }
+                    }
                 }
             }
         }
