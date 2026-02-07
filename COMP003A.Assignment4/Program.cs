@@ -24,7 +24,15 @@
 
                 int choice = int.Parse(Console.ReadLine());
 
+                if (choice == 1)
+                {
+                    if (currentStep >= maxSteps)
+                    {
+                        Console.WriteLine("Routine is already complete. No more steps can be done");
+                    }
 
+
+                }
             }
         }
     }
