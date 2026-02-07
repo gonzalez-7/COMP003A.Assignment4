@@ -55,6 +55,17 @@
                         }
                     }
                 }
+
+                else if (choice == 2)
+                {
+                    Console.WriteLine($"Curent progress: {currentStep} steps completed");
+                }
+
+                else if (choice == 3)
+                {
+                    running = false;
+                    Console.WriteLine("Program ended.");
+                }
             }
         }
     }
