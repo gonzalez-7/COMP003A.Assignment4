@@ -13,6 +13,19 @@
 
             // this loop is because the menu list must repeat until the user exits
             bool running = true;
+
+            while (running)
+            {
+                Console.WriteLine();
+                Console.WriteLine("1. Start/Continue Routine");
+                Console.WriteLine("2. View Progress");
+                Console.WriteLine("3. Exit");
+                Console.WriteLine("Enter choice: ");
+
+                int choice = int.Parse(Console.ReadLine());
+
+
+            }
         }
     }
 }
