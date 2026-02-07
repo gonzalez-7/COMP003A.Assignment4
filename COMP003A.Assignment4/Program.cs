@@ -26,6 +26,7 @@
 
                 if (choice == 1)
                 {
+                    // blocks the exists to advance the routine one step a time
                     if (currentStep >= maxSteps)
                     {
                         Console.WriteLine("Routine is already complete. No more steps can be done");
@@ -33,14 +34,17 @@
 
                     else
                     {
+                        // moves to the next step
                         currentStep++;
 
+                        // Restricted steps must be skipped
                         if (currentStep == restrictedStep)
                         {
                             Console.WriteLine($"Step {currentStep} is restricted and was skipped");
                             continue;
                         }
 
+                        // Safety limit must stop the routine when reached
                         if (currentStep >= safetyLimit)
                         {
                             Console.WriteLine("Safety limit reached. Routine stopped");
@@ -49,6 +53,8 @@
 
                         Console.WriteLine($"Routine step {currentStep} completed");
 
+
+                        // Auto-stop once maximum is reached 
                         if (currentStep >= maxSteps)
                         {
                             Console.WriteLine("Maximum steps reached. Routine complete");
@@ -58,11 +64,13 @@
 
                 else if (choice == 2)
                 {
+                    // This blocks exists to show progress without changing the routine
                     Console.WriteLine($"Curent progress: {currentStep} steps completed");
                 }
 
                 else if (choice == 3)
                 {
+                    // Exits cleanly by ending the menu loop
                     running = false;
                     Console.WriteLine("Program ended.");
                 }
